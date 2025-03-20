@@ -60,5 +60,34 @@
             <p >Đang chiết hạt</p>
         </div>
     </div>
+
+    <script>
+        // Check if user is "logged in" (using localStorage for this example)
+        if (localStorage.getItem("isLoggedIn") === "true") {
+            document.getElementById("loginModal").style.display = "none";
+            document.getElementById("mainContent").style.display = "block";
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Simple fake authentication (replace with real logic)
+            if (username === "user" && password === "pass") { // Example credentials
+                localStorage.setItem("isLoggedIn", "true"); // Mark as logged in
+                document.getElementById("loginModal").style.display = "none";
+                document.getElementById("mainContent").style.display = "block";
+            } else {
+                alert("Invalid username or password");
+            }
+        }
+
+        // Optional: Logout function (if you want to add a logout button)
+        function logout() {
+            localStorage.removeItem("isLoggedIn");
+            location.reload(); // Reloads page to show login modal again
+        }
+    </script>
 </body>
 </html>
