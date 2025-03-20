@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PLC FX5U Web Server</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src=".\index.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/abd3f04063.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="title">FX5U WEBSERVER</div>
+    <div class="container">
+        <!-- Bảng điều khiển bên trái -->
+        <div class="control-panel">
+            <div class="sensor">
+                <label>Cảm biến 1</label>
+                <div class="status on"></div>
+            </div>
+            <div class="sensor">
+                <label>Cảm biến 2</label>
+                <div class="status"></div>
+            </div>
+            <div class="sensor">
+                <label>Cảm biến 3</label>
+                <div class="status on"></div>
+            </div>
+            <div class="sensor">
+                <label>Cảm biến 4</label>
+                <div class="status"></div>
+            </div>
+        </div>
+
+        <!-- Sơ đồ khối bên phải -->
+        <div class="block-diagram">
+            <div class="block block-1">Khối 1</div>
+            <div class="block block-2">Khối 2</div>
+            <div class="block block-3">Khối 3</div>
+            <div class="block block-4">Khối 4</div>
+
+            <!-- Mũi tên -->
+            <div class="arrow arrow-right"></div>
+            <div class="arrow arrow-down"></div>
+            <div class="arrow arrow-left"></div>
+        </div>
+        <div class="statusProgress">Trạng thái:
+            <p >Đang chiết hạt</p>
+        </div>
+    </div>
+</body>
+</html>
