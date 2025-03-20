@@ -10,6 +10,19 @@
 
 <body>
     <div class="title">FX5U WEBSERVER</div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="login-modal">
+        <div class="login-modal-content">
+            <form onsubmit="handleLogin(event)">
+                <h2>Login</h2>
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
     <div class="container">
         <!-- Bảng điều khiển bên trái -->
         <div class="control-panel">
