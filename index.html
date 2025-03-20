@@ -77,7 +77,8 @@
 
             // Simple fake authentication (replace with real logic)
             if (username === "user" && password === "pass") { // Example credentials
-                localStorage.setItem("isLoggedIn", "true"); // Mark as logged in
+                // localStorage.setItem("isLoggedIn", "true"); // Mark as logged in
+                isLoggedIn = true; // Set session variable
                 document.getElementById("loginModal").style.display = "none";
                 document.getElementById("mainContent").style.display = "block";
             } else {
@@ -87,7 +88,8 @@
 
         // Optional: Logout function (if you want to add a logout button)
         function logout() {
-            localStorage.removeItem("isLoggedIn");
+            // localStorage.removeItem("isLoggedIn");
+            isLoggedIn = false; // Reset session variable
             document.getElementById("mainContent").style.display = "none";
             document.getElementById("loginModal").style.display = "flex"; // Show login modal again
         }
