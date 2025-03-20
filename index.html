@@ -88,7 +88,8 @@
         // Optional: Logout function (if you want to add a logout button)
         function logout() {
             localStorage.removeItem("isLoggedIn");
-            location.reload(); // Reloads page to show login modal again
+            document.getElementById("mainContent").style.display = "none";
+            document.getElementById("loginModal").style.display = "flex"; // Show login modal again
         }
     </script>
 </body>
