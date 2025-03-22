@@ -77,19 +77,30 @@
         document.getElementById("loginModal").style.display = "flex";
         document.getElementById("mainContent").style.display = "none";
 
-        function handleLogin(event) {
+        // Handle login with fetch to backend
+        async function handleLogin(event) {
             event.preventDefault();
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
 
-            // Simple fake authentication (replace with real logic)
-            if (username === "user" && password === "pass") { // Example credentials
-                // localStorage.setItem("isLoggedIn", "true"); // Mark as logged in
-                isLoggedIn = true; // Set session variable
-                document.getElementById("loginModal").style.display = "none";
-                document.getElementById("mainContent").style.display = "block";
-            } else {
-                alert("Invalid username or password");
+            try {
+                const response = await fetch('http://localhost:3000/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+                const data = await response.json();
+
+                if (data.success) {
+                    isLoggedIn = true;
+                    document.getElementById("loginModal").style.display = "none";
+                    document.getElementById("mainContent").style.display = "block";
+                } else {
+                    alert(data.message || "Invalid username or password");
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                alert("An error occurred. Please try again.");
             }
         }
 
