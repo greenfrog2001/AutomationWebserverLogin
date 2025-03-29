@@ -21,5 +21,5 @@ Main project: [here](https://github.com/uynkhanh1505/AutomationWebServer).
    ```
    Keep it running.
 4. **Use the frontend**:
-   - Open your index.html in a browser.
+   - Open your `index.html` in a browser.
    - Enter `user` and `pass` in the login form.
